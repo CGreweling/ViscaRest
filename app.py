@@ -22,11 +22,29 @@ class TodoSimple(Resource):
 
 class Index(restful.Resource):
    def get(self):
-        text='Bedienung mit Rest: curl http://localhost:5000/viscaDo/pan -d "data=set_pantilt_relative_position 10 10 10 10" -X PUT'	
+        text='Bedienung mit Rest und curl: curl http://localhost:5000/curlDo/pan -d "data=set_pantilt_relative_position 10 10 10 10" -X PUT'	
         return text 
 
-api.add_resource(TodoSimple, '/viscaDo/<string:todo>')
-api.add_resource(Index,'/')
+
+@app.route('/post', methods = ['GET','POST'])
+def getPersonById():	
+    if request.method == 'POST':
+       return 'POST'
+    if request.method == 'GET':
+        command = request.args.get('todo', '')
+        viscaCommand="./visca_cli -d /dev/ttyUSB0 "+command
+        print viscaCommand
+        os.system(viscaCommand)
+        return viscaCommand   
+    return 'no Method'
+
+@app.route('/')
+def message():
+    return render_template('index.html')
+
+
+api.add_resource(TodoSimple, '/curlDo/<string:todo>')
+api.add_resource(Index,'/curlDo')
 
 if __name__ == '__main__':
     app.debug= True
