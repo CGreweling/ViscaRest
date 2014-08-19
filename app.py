@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask.ext.restful import Resource, Api
 from flask.ext import restful
 
@@ -29,4 +29,5 @@ api.add_resource(TodoSimple, '/viscaDo/<string:todo>')
 api.add_resource(Index,'/')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.debug= True
+    app.run(host='0.0.0.0')
