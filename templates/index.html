@@ -1,0 +1,330 @@
+{% block content %}
+<h1> Input </h1>
+<p> example: set_pantilt_absolute_position 10 10 200 200 </p>
+<form name="input" action="/post" method="GET">
+Commando <input type="text" name="todo">
+<input type="submit" value="Do">
+</form> 
+
+    <h1>Commands:</h1>
+        <p>
+Commands without parameter:<br />
+===========================<br />
+set_zoom_tele (set the zoom to maximum)<br />
+set_zoom_wide (set the zoom to minimum)<br />
+set_zoom_stop (stop zooming)<br />
+set_focus_far (set the focus to far)<br />
+set_focus_near (set the focus to near)<br />
+set_focus_stop (stop focusing)<br />
+set_focus_one_push (not for D30)<br />
+set_focus_infinity (not for D30)<br />
+set_focus_autosense_high (not for D30)<br />
+set_focus_autosense_low (not for D30)<br />
+set_whitebal_one_push (push trigger for whitebalance in OnePush mode)<br />
+set_rgain_up (not for D30)<br />
+set_rgain_down (not for D30)<br />
+set_rgain_reset (not for D30)<br />
+set_bgain_up (not for D30)<br />
+set_bgain_down (not for D30)<br />
+set_bgain_reset (not for D30)<br />
+set_shutter_up (increase the shutter speed, available only with <br />
+ shutter_priority or AE_Manual)<br />
+set_shutter_down (decrease the shutter speed, available only with <br />
+ shutter_priority or AE_Manual)<br />
+set_shutter_reset (reset the shutter speed, available only with <br />
+ shutter_priority or AE_Manual)<br />
+set_iris_up (open up the iris, available only with <br />
+ iris_priority or AE_Manual)<br />
+set_iris_down (close the iris, available only with <br />
+ iris_priority or AE_Manual)<br />
+set_iris_reset (reset the iris, available only with <br />
+ iris_priority or AE_Manual)<br />
+set_gain_up (increase the gain, available only with AE_Manual)<br />
+set_gain_down (decrease the gain, available only with AE_Manual)<br />
+set_gain_reset (reset the gain, available only with AE_Manual)<br />
+set_bright_up (brighten the image, available only with bright_mode)<br />
+set_bright_down (darken the image, available only with bright_mode)<br />
+set_bright_reset (reset the image brightness, <br />
+ available only with bright_mode)<br />
+set_aperture_up (not for D30)<br />
+set_aperture_down (not for D30)<br />
+set_aperture_reset (not for D30)<br />
+set_exp_comp_up (not for D30)<br />
+set_exp_comp_down (not for D30)<br />
+set_exp_comp_reset (not for D30)<br />
+set_title_clear (not for D30)<br />
+set_irreceive_on (enable IR remote controller)<br />
+set_irreceive_off (disable IR remote controller)<br />
+set_irreceive_onoff (toggle IR remote controller)<br />
+set_pantilt_home (set pan/tilt position to center)<br />
+set_pantilt_reset (initialize pan/tilt motors)<br />
+set_pantilt_limit_downleft_clear (remove pan/tilt limits <br />
+ for lower left position)<br />
+set_pantilt_limit_upright_clear (remove pan/tilt limits <br />
+ for upper right position)<br />
+set_datascreen_on (show data display)<br />
+set_datascreen_off (hide data display)<br />
+set_datascreen_onoff (toggle data display)<br />
+<br />
+Commands with one boolean parameter (0|1):<br />
+==========================================<br />
+set_power (set standby power state)<br />
+set_keylock (set or release keylock)<br />
+set_dzoom (not for D30)<br />
+set_focus_auto (turn autofocus on or off)<br />
+set_exp_comp_power (not for D30)<br />
+set_slow_shutter_auto (not for D30)<br />
+set_backlight_comp (turn backlight compensation on or off)<br />
+set_zero_lux_shot (not for D30)<br />
+set_ir_led (not for D30)<br />
+set_mirror (not for D30)<br />
+set_freeze (not for D30)<br />
+set_display (not for D30)<br />
+set_date_display (not for D30)<br />
+set_time_display (not for D30)<br />
+set_title_display (not for D30)<br />
+<br />
+Commands with one integer parameter:<br />
+====================================<br />
+set_zoom_tele_speed <speed> (set the zoom to maximum with a speed <br />
+ between 2 and 7)<br />
+set_zoom_wide_speed <speed> (set the zoom to minimum with a speed <br />
+ between 2 and 7)<br />
+set_zoom_value <zoom> (set the zoom to the given value <br />
+ between 0 and 1023)<br />
+set_focus_far_speed <speed> (not for D30)<br />
+set_focus_near_speed <speed> (not for D30)<br />
+set_focus_value <focus> (set the focus to the given value <br />
+ between 1000 and 40959)<br />
+set_focus_near_limit <limit> (not for D30)<br />
+set_whitebal_mode <mode> (set the whitebalance mode to <br />
+ 0: Auto, 1: Indoor, 2: Outdoor, 3: OnePush)<br />
+set_rgain_value <value> (not for D30)<br />
+set_bgain_value <value> (not for D30)<br />
+set_shutter_value <value> (set the shutter value between <br />
+ 0: 1/60 and 27: 1/10000)<br />
+set_iris_value <value> (set the iris opening to a value <br />
+ between 0: closed and 17: F1.8)<br />
+set_gain_value <value> (set the gain value between <br />
+ 1: 0dB and 7: +18dB)<br />
+set_bright_value <value> (not for D30)<br />
+set_aperture_value <value> (not for D30)<br />
+set_exp_comp_value <value> (not for D30)<br />
+set_auto_exp_mode <mode> (set the AE mode to 0: Full Auto, 3: Manual, <br />
+ 10: Shutter priority, 11: Iris priority, <br />
+ 13: Bright Mode)<br />
+set_wide_mode <mode> (not for D30)<br />
+set_picture_effect <mode> (not for D30)<br />
+set_digital_effect <mode> (not for D30)<br />
+set_digital_effect_level <level> (not for D30)<br />
+memory_set <channel> (save the current position to channel 0 to 5)<br />
+memory_recall <channel> (recall the current position from <br />
+ channel 0 to 5)<br />
+memory_reset <channel> (reset a channel 0 to 5)<br />
+<br />
+Commands with two integer parameters:<br />
+=====================================<br />
+set_zoom_and_focus_value <zoom> <focus> (not for D30, <br />
+ zoom 0 to 1023, <br />
+ focus 1000 to 40959)<br />
+set_pantilt_up <pan_speed> <tilt_speed> (move up, <br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_down <pan_speed> <tilt_speed> (move down,<br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_left <pan_speed> <tilt_speed> (move left,<br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_right <pan_speed> <tilt_speed> (move right, <br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_upleft <pan_speed> <tilt_speed> (move up and left, <br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_upright <pan_speed> <tilt_speed> (move up and right, <br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_downleft <pan_speed> <tilt_speed> (move down and left, <br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_downright <pan_speed> <tilt_speed> (move down and right, <br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_stop <pan_speed> <tilt_speed> (stop moving, <br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20)<br />
+set_pantilt_limit_upright <pan_limit> <tilt_limit> (limit movement <br />
+ upper right corner, <br />
+ pan limit: -879 to 880, <br />
+ tilt limit: -299 to 300)<br />
+set_pantilt_limit_downleft <pan_limit> <tilt_limit> (limit movement <br />
+ lower left corner, <br />
+ pan limit: -879 to 880, <br />
+ tilt limit: -299 to 300)<br />
+<br />
+Commands with four integer parameters:<br />
+======================================<br />
+set_pantilt_absolute_position <pan_speed> <tilt_speed> <br />
+ <pan_position> <tilt_position> (set position,<br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20,<br />
+ pan_pos: -879 to 880, <br />
+ tilt_pos: -299 to 300)<br />
+set_pantilt_relative_position <pan_speed> <tilt_speed> <br />
+ <pan_position> <tilt_position> (set position,<br />
+ pan_speed from 1 to 24, <br />
+ tilt speed from 1 to 20,<br />
+ pan_pos: -879 to 880, <br />
+ tilt_pos: -299 to 300)<br />
+set_title_params <vposition> <hposition> <color> <blink> (not for D30, <br />
+ set title params)<br />
+<br />
+Commands with five parameters:<br />
+==============================<br />
+set_date_time <year> <month> <day> <hour> <minute> (not for D30, <br />
+ set date and time)<br />
+set_title <vposition> <hposition> <color> <blink> <text> (not for D30, <br />
+ set title params<br />
+ and title text)<br />
+<br />
+Commands that return one boolean value:<br />
+=======================================<br />
+get_power (returns 1 if in standby mode, 0 otherwise)<br />
+get_dzoom (not for D30)<br />
+get_focus_auto (returns 1 if autofocus, 0 otherwise)<br />
+get_exp_comp_power (not for D30)<br />
+get_backlight_comp (returns 1 if backlight compensation is on, 0 otherwise)<br />
+get_zero_lux_shot (not for D30)<br />
+get_ir_led (not for D30)<br />
+get_mirror (not for D30)<br />
+get_freeze (not for D30)<br />
+get_display (not for D30)<br />
+get_datascreen (returns 1 if a datascreen is displayed, 0 otherwise)<br />
+<br />
+Commands that return one integer value:<br />
+=======================================<br />
+get_zoom_value (returns a value between 0 and 1023)<br />
+get_focus_value (returns a value between 1000 and 40959)<br />
+get_focus_auto_sense (not for D30)<br />
+get_focus_near_limit (not for D30)<br />
+get_whitebal_mode (returns the whitebalance mode: <br />
+ 0: Auto, 1: Indoor, 2: Outdoor, 3: OnePush)<br />
+get_rgain_value (not for D30)<br />
+get_bgain_value (not for D30)<br />
+get_auto_exp_mode (returns the auto exposure mode:<br />
+ 0: Full Auto, 3: Manual,<br />
+ 10: Shutter priority, 11: Iris priority, <br />
+ 13: Bright Mode)<br />
+get_slow_shutter_auto (not for D30)<br />
+get_shutter_value (returns the shutter value between <br />
+ 0: 1/60 and 27: 1/10000)<br />
+get_iris_value (returns the iris value between <br />
+ 0: closed and 17: F1.8<br />
+get_gain_value (returns the gain value between 1: 0dB and 7: +18dB)<br />
+get_bright_value (not for D30)<br />
+get_exp_comp_value (not for D30)<br />
+get_aperture_value (not for D30)<br />
+get_wide_mode (not for D30)<br />
+get_picture_effect (not for D30)<br />
+get_digital_effect (not for D30)<br />
+get_digital_effect_level (not for D30)<br />
+get_memory (returns the current memory preset position 0 to 5)<br />
+get_id (returns the camera id)<br />
+get_videosystem (returns the video sytstem: 0 for NTSC, 1 for PAL)<br />
+get_pantilt_mode (returns the pantilt status, what is this?)<br />
+<br />
+Commands that return two integer values:<br />
+========================================<br />
+get_pantilt_maxspeed (returns max_pan_speed and max_tilt_speed)<br />
+get_pantilt_position (returns pan_position: -860..862<br />
+ and tilt_position: -281..283)<br />
+<br />
+==================================================<br />
+Commands not yet in libVISCA:<br />
+==================================================<br />
+<br />
+Commands without parameter:<br />
+===========================<br />
+set_at_mode_onoff (Target tracking mode On/Off)<br />
+set_at_ae_onoff (Auto exposure for target tracking mode On/Off)<br />
+set_at_autozoom_onoff (Auto zoom for target tracking mode On/Off)<br />
+set_atmd_framedisplay_onoff (Frame display for target tracking or <br />
+ motion detection mode On/Off)<br />
+set_at_frameoffset_onoff (Frame offset control for <br />
+ target tracking mode On/Off)<br />
+set_atmd_startstop (Start or stop target tracking or <br />
+ motion detection)<br />
+set_at_chase_next (Select target tracking chase mode 1/2/3)<br />
+set_md_mode_onoff (Motion detection mode On/Off)<br />
+set_md_frame (Set detection area/size for motion detection)<br />
+set_md_detect (Select detecting frame for motion detection, <br />
+ 1, 2 or 1+2)<br />
+set_at_lostinfo (returns when target is lost <br />
+ in target tracking mode)<br />
+set_md_lostinfo (returns when motion is detected within frame <br />
+ in motion detection mode)<br />
+set_md_measure_mode1_onoff (Set motion detection measure mode 1 On/Off)<br />
+set_md_measure_mode2_onoff (Set motion detection measure mode 2 On/Off)<br />
+<br />
+Commands with one boolean parameter (0|1):<br />
+==========================================<br />
+set_at_mode (Target tracking mode On/Off)<br />
+set_at_ae (Auto exposure for target tracking mode On/Off)<br />
+set_at_autozoom (Auto zoom for target tracking mode On/Off)<br />
+set_atmd_framedisplay (Frame display for target tracking or <br />
+ motion detection mode On/Off)<br />
+set_at_frameoffset (Frame offset control for target tracking mode On/Off)<br />
+set_md_mode (Motion detection mode On/Off)<br />
+set_md_measure_mode1 (Set motion detection measure mode 1 On/Off)<br />
+set_md_measure_mode2 (Set motion detection measure mode 2 On/Off)<br />
+<br />
+Commands with one integer parameter:<br />
+====================================<br />
+set_wide_con_lens <conversion> (AT compensation when a wide conversion lens <br />
+ is installed, <br />
+ 0: No conversion to 7: X0.6 conversion)<br />
+set_at_chase <chase_mode> (Select target tracking chase mode 0, 1 or 2)<br />
+set_at_entry <entry> (Select target study mode for target tracking<br />
+ available modes: 0 to 3)<br />
+set_md_adjust_ylevel <level> (adjust level of detection from 0 to 15)<br />
+set_md_adjust_huelevel <level> (adjust level of detection from 0 to 15)<br />
+set_md_adjust_size <level> (adjust level of detection from 0 to 15)<br />
+set_md_adjust_disptime <level> (adjust level of detection from 0 to 15)<br />
+set_md_adjust_refmode <mode> (set refreshmode from 0 to 2)<br />
+set_md_adjust_reftime <time> (set refreshtime from 0 to 15)<br />
+<br />
+Commands that return one boolean value:<br />
+=======================================<br />
+get_keylock (returns 1 if keylock is set, 0 otherwise)<br />
+<br />
+Commands that return one integer value:<br />
+=======================================<br />
+get_wide_con_lens (returns which wide conversion lens is installed, <br />
+ 0: No conversion to 7: X0.6 conversion)<br />
+get_atmd_mode (returns the current AT or MD mode: <br />
+ 0: Normal mode, 1: AT mode, 2: MD mode)<br />
+get_at_mode (returns the AT status, <br />
+ see D30/31 Command List for details<br />
+get_at_entry (returns the AT entry: 0 to 3)<br />
+get_md_mode (returns the MD status, <br />
+ see D30/31 Command List for details)<br />
+get_md_ylevel (returns level of detection from 0 to 15)<br />
+get_md_huelevel (returns level of detection from 0 to 15)<br />
+get_md_size (returns level of detection from 0 to 15)<br />
+get_md_disptime (returns level of detection from 0 to 15)<br />
+get_md_refmode (returns refreshmode from 0 to 2)<br />
+get_md_reftime (returns refreshtime from 0 to 15)<br />
+<br />
+Commands that return three integer values:<br />
+==========================================<br />
+get_at_obj_pos (returns the center position of the detection frame divided<br />
+ by 48x30 pixels and a status: 0=Setting, 1=Tracking, 2=Lost)<br />
+get_md_obj_pos (returns the center position of the detection frame divided<br />
+ by 48x30 pixels and a status: 1=UnDetect, 2=Detected)<br />
+*/<br />
+<br />
+
+        </p>
+    </form>
+{% endblock %}
